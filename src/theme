@@ -1,0 +1,21 @@
+import { extendTheme } from '@chakra-ui/react';
+
+const theme = extendTheme({
+    fonts: {
+        heading: "'Roboto', sans-serif", // Heading font
+        body: "'Open Sans', sans-serif", // Body font
+        // You can add more fonts or customize as needed
+    },
+    styles: {
+        global: {
+            'html, body': {
+                fontSize: '16px',
+                lineHeight: 'tall',
+                bg: 'gray.800', // Set background color for the app
+                color: 'white', // Set text color
+            },
+        },
+    },
+});
+
+export default theme;
