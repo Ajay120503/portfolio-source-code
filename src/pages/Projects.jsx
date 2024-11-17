@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import MMCC from '../../public/MMCC.png';
 import WEBHUB from '../../public/WEBHUB.png';
 import CODERHUB from '../../public/CODERHUB.png';
+import CODEBOX from '../../public/CODEBOX.png'
 import { useNavigate } from 'react-router-dom';
 
 const projects = [
@@ -38,6 +39,14 @@ const projects = [
         source: `https://github.com/Ajay120503/web-hub-source-code.git`,
         img: WEBHUB,
     },
+    {
+        title: 'Code Box',
+        description: 'A dynamic web platform designed to centralize resources,store your codes and source code.',
+        techStack: 'React, Node.js, Chakra UI, Vite',
+        link: `https://code-box-alpha.vercel.app`,
+        source: `https://github.com/Ajay120503/Code-Box-Source-Code.git`,
+        img: CODEBOX
+    }
 ];
 
 const Projects = () => {
@@ -49,13 +58,13 @@ const Projects = () => {
     const navigate = useNavigate();
 
     return (
-        <Box p={4} maxWidth="100%" overflow="hidden">
-            <Box textAlign={{ base: "center", lg: "start" }}>
-                <Heading id='skills' as="h2" size="lg" mb={5}>
+        <Box maxWidth="100%" overflow="hidden">
+            <Box textAlign={{ base: "center", lg: "start" }} position="fixed" bg="gray.900" w="100vw" top={0} left={0}>
+                <Heading id='skills' as="h2" size="lg" m="10px 0 10px 10px">
                     Projects
                 </Heading>
             </Box>
-            <Box display="flex" flexWrap="wrap" justifyContent="center">
+            <Box display="flex" flexWrap="wrap" justifyContent="center" mt={10}>
                 {projects.map((project) => (
                     <Box
                         key={project.title}
@@ -124,7 +133,7 @@ const Projects = () => {
                     colorScheme="teal" // Change color scheme as needed
                     variant="outline" // Change variant as needed
                     leftIcon={<Icon name="arrow-back" />} // Optionally add an icon
-                    mt={5}
+                    m="5px 0 10px 5px"
                     _hover={{ bg: "teal.900" }}
                 >
                     Back

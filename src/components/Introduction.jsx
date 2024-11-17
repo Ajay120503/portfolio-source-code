@@ -2,6 +2,7 @@ import { Box, Grid, Text, Link, useBreakpointValue, Heading, Button } from '@cha
 import PHOTO1 from '../../public/PHOTO1.png';
 import { motion } from 'framer-motion';
 import CV from '../../public/CV.pdf'
+import { TypeAnimation } from 'react-type-animation';
 
 const Introduction = () => {
     const textAlign = useBreakpointValue({ base: 'center', md: 'left' }); // Adjust text alignment based on screen size
@@ -50,16 +51,35 @@ const Introduction = () => {
                                 textAlign={{ base: "center", md: "start" }}
                                 letterSpacing="wide"
                             >
-                                <Box as="span" color="teal.100">
+                                <Box Box as="span" color="teal.100">
                                     AJAY
                                 </Box>
                                 {" "}
                                 <Box as="span" bgGradient="linear(to-r, teal.300, cyan.100)" bgClip="text">
                                     KANDHARE
                                 </Box>
+
+
                             </Heading>
                             <Text fontSize="xl" color="gray.200">
-                                Web Developer
+                                I am{" "}
+                                <TypeAnimation
+                                    sequence={[
+                                        '',
+                                        1000,
+                                        'Web Developer',
+                                        1000,
+                                        'Hacker',
+                                        1000,
+                                        'Software Developer',
+                                        1000,
+                                    ]}
+                                    wrapper="span"
+                                    speed={{ type: 'keyStrokeDelayInMs', value: 250 }}
+                                    style={{ fontSize: 'xl', display: 'inline-block' }}
+                                    repeat={Infinity}
+                                    className='typer'
+                                />
                             </Text>
                             <Text fontSize="md" color="gray.200" marginTop={2}>
                                 Pune, Maharashtra, India

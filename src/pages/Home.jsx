@@ -9,6 +9,7 @@ import Introduction from '../components/Introduction';
 import MMCC from '../../public/MMCC.png'
 import WEBHUB from '../../public/WEBHUB.png'
 import CODERHUB from '../../public/CODERHUB.png'
+import CODEBOX from '../../public/CODEBOX.png'
 import Footer from './Footer';
 import Experience from './Experience';
 import ScrollButton from '../components/ScrollButton';
@@ -65,6 +66,14 @@ function Home() {
             link: `https://web-hub-alpha.vercel.app`,
             source: `https://github.com/Ajay120503/web-hub-source-code.git`,
             img: WEBHUB
+        },
+        {
+            title: 'Code Box',
+            description: 'A dynamic web platform designed to centralize resources,store your codes and source code.',
+            techStack: 'React, Node.js, Chakra UI, Vite',
+            link: `https://code-box-alpha.vercel.app`,
+            source: `https://github.com/Ajay120503/Code-Box-Source-Code.git`,
+            img: CODEBOX
         }
     ];
 
@@ -96,7 +105,7 @@ function Home() {
 
     return (
         <>
-            <Box maxW="1250px" bg="gray.800" mx="auto" /*bg="gray.800"*/ color="white" overflow="hidden" >
+            <Box maxW="1250px" bg="gray.800" mx="auto" color="white" overflow="hidden" >
                 <Box h='10vh' mb={5}>
                     <Navbar />
                 </Box>

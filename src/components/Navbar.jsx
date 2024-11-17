@@ -63,12 +63,12 @@ const Navbar = () => {
                             </BreadcrumbLink>
                         </BreadcrumbItem>
                         <BreadcrumbItem>
-                            <BreadcrumbLink href="#skills" color="white" fontWeight="bold" _hover={{ bg: 'gray.700', textDecoration: 'none' }} px={3}>
+                            <BreadcrumbLink as={RouterLink} to="/skills" color="white" fontWeight="bold" _hover={{ bg: 'gray.700', textDecoration: 'none' }} px={3}>
                                 Skills
                             </BreadcrumbLink>
                         </BreadcrumbItem>
                         <BreadcrumbItem>
-                            <BreadcrumbLink href="#projects" color="white" fontWeight="bold" _hover={{ bg: 'gray.700', textDecoration: 'none' }} px={3}>
+                            <BreadcrumbLink as={RouterLink} to="/projects" color="white" fontWeight="bold" _hover={{ bg: 'gray.700', textDecoration: 'none' }} px={3}>
                                 Projects
                             </BreadcrumbLink>
                         </BreadcrumbItem>

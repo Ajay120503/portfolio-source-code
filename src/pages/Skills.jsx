@@ -32,8 +32,8 @@ const Skills = () => {
     const navigate = useNavigate();
     return (
         <Box p={4} maxWidth="100%" overflow="hidden">
-            <Box textAlign={{ base: "center", lg: "start" }}>
-                <Heading id='skills' as="h2" size="lg" mb={5}>
+            <Box textAlign={{ base: "center", lg: "start" }} position="fixed" bg="gray.900" w="100vw" top={0} left={0}>
+                <Heading id='skills' as="h2" size="lg" m="10px 0 10px 10px">
                     Skills
                 </Heading>
             </Box>
@@ -43,6 +43,7 @@ const Skills = () => {
                 justifyContent={{ base: "center", lg: "space-between" }}
                 alignItems={{ base: "center", lg: "start" }}
                 px={{ base: 2, md: 6 }}
+                mt={10}
             >
                 {Object.entries(skills).map(([category, skillList]) => (
                     <Box
@@ -55,6 +56,7 @@ const Skills = () => {
                         width={{ base: "100%", sm: "48%", md: "45%", lg: "20%" }}
                         boxShadow="dark-lg"
                         border="1px solid #ffffff29"
+                        minH="250px"
                         m={2}
                     >
                         <motion.div

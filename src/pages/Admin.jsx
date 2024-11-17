@@ -18,11 +18,11 @@ const Admin = () => {
     const handleLogin = () => {
         if (!username || !password) {
             toast({
-                title: 'Missing Credentials',
                 description: "Please enter both username and password.",
                 status: 'warning',
                 duration: 3000,
-                isClosable: true,
+                isClosable: false,
+                position: 'top-right'
             });
             return;
         }
@@ -30,19 +30,19 @@ const Admin = () => {
         if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
             setIsLoggedIn(true);
             toast({
-                title: 'Login successful.',
                 description: "Welcome back, Admin!",
                 status: 'success',
                 duration: 3000,
-                isClosable: true,
+                isClosable: false,
+                position: 'top-right'
             });
         } else {
             toast({
-                title: 'Login failed.',
                 description: "Incorrect username or password.",
                 status: 'error',
                 duration: 3000,
-                isClosable: true,
+                isClosable: false,
+                position: 'top-right'
             });
         }
     };
