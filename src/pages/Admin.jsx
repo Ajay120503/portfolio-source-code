@@ -93,11 +93,12 @@ const Admin = () => {
                                 />
                                 <InputRightElement >
                                     <IconButton
-                                        icon={showPassword ? <ViewOffIcon /> : <ViewIcon />}
+                                        icon={showPassword ? <ViewOffIcon _hover={{ color: '#fff' }} /> : <ViewIcon _hover={{ color: '#fff' }} />}
                                         variant="ghost"
                                         color="gray.500"
                                         onClick={() => setShowPassword(!showPassword)}
                                         aria-label={showPassword ? "Hide password" : "Show password"}
+                                        _hover={{ bg: 'none' }}
                                     />
                                 </InputRightElement>
                             </InputGroup>

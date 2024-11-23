@@ -3,6 +3,8 @@ import PHOTO1 from '../../public/PHOTO1.png';
 import { motion } from 'framer-motion';
 import CV from '../../public/CV.pdf'
 import { TypeAnimation } from 'react-type-animation';
+import "@darenft/react-3d-hover-card/dist/style.css";
+import HoverCard from "@darenft/react-3d-hover-card";
 
 const Introduction = () => {
     const textAlign = useBreakpointValue({ base: 'center', md: 'left' }); // Adjust text alignment based on screen size
@@ -39,7 +41,7 @@ const Introduction = () => {
                         variants={foggyLeftToRight}
                         initial="hidden"
                         whileInView="visible"
-                        transition={{ duration: 1 }}
+                        transition={{ duration: 1.05 }}
                         viewport={{ once: true }}
                     >
                         <Box textAlign={textAlign}>
@@ -51,15 +53,10 @@ const Introduction = () => {
                                 textAlign={{ base: "center", md: "start" }}
                                 letterSpacing="wide"
                             >
-                                <Box Box as="span" color="teal.100">
-                                    AJAY
-                                </Box>
-                                {" "}
-                                <Box as="span" bgGradient="linear(to-r, teal.300, cyan.100)" bgClip="text">
+                                <Box Box as="span" bgGradient="linear(to-l, teal.500, cyan.100)" bgClip="text">
+                                    AJAY{" "}
                                     KANDHARE
                                 </Box>
-
-
                             </Heading>
                             <Text fontSize="xl" color="gray.200">
                                 I am{" "}
@@ -75,8 +72,8 @@ const Introduction = () => {
                                         1000,
                                     ]}
                                     wrapper="span"
-                                    speed={{ type: 'keyStrokeDelayInMs', value: 250 }}
-                                    style={{ fontSize: 'xl', display: 'inline-block' }}
+                                    speed={{ type: 'keyStrokeDelayInMs', value: 200 }}
+                                    style={{ fontSize: 'xl', display: 'inline-block', fontWeight: 900, fontFamily: 'monospace' }}
                                     repeat={Infinity}
                                     className='typer'
                                 />
@@ -130,21 +127,21 @@ const Introduction = () => {
                         variants={foggyRightToLeft}
                         initial="hidden"
                         whileInView="visible"
-                        transition={{ duration: 1 }}
+                        transition={{ duration: 1.05 }}
                         viewport={{ once: true }}
                     >
-                        <Box>
+                        <HoverCard scaleFactor={1.4}>
                             <Box
                                 as="img"
                                 src={PHOTO1} // Replace with your image URL
                                 alt="Ajay Kandhare"
                                 borderRadius="0px"
                                 boxShadow="dark-lg"
-                                width="300px"
+                                width="250px"
                                 maxWidth={imageSize} // Adjust image size based on screen size
                                 margin="0 auto"
                             />
-                        </Box>
+                        </HoverCard>
                     </motion.div>
                 </Box>
             </Grid>

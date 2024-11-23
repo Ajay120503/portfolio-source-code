@@ -2,6 +2,8 @@
 import PropTypes from 'prop-types';
 import { Box, Heading, Text, Link, Image } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
+import HoverCard from "@darenft/react-3d-hover-card";
+import "@darenft/react-3d-hover-card/dist/style.css";
 
 const ProjectCard = ({ title, description, techStack, link, source, img }) => {
 
@@ -34,14 +36,16 @@ const ProjectCard = ({ title, description, techStack, link, source, img }) => {
                 viewport={{ once: true }}
             >
                 <a href={img} target="_blank" rel="noopener noreferrer">
-                    <Image
-                        src={img}
-                        alt={`${title} Project Screenshot`}
-                        boxSize="100%"
-                        objectFit="cover"
-                        borderRadius="0px"
-                        mb={4}
-                    />
+                    <HoverCard scaleFactor={1.4} >
+                        <Image
+                            src={img}
+                            alt={`${title} Project Screenshot`}
+                            boxSize="100%"
+                            objectFit="cover"
+                            borderRadius="0px"
+                            mb={4}
+                        />
+                    </HoverCard>
                 </a>
                 <Heading size="md" fontSize={['md', 'lg']}>{title}</Heading>
                 <Text mt={2} fontSize={['sm', 'md']}>{description}</Text>

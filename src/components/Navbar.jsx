@@ -17,17 +17,55 @@ import {
 import { Link as RouterLink } from 'react-router-dom';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import ProfilePhoto from '../../public/profilePhoto.jpg';
+import { motion } from 'framer-motion';
+
+const MotionBox = motion(Box);
+
+const breadcrumbHoverStyle = {
+    position: "relative",
+    _hover: {
+        textDecoration: 'none',
+        _after: {
+            content: `""`,
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            bg: "gray.600",
+            transform: "scaleX(1)",
+            transformOrigin: "left",
+            transition: "transform 0.5s ease-out",
+            zIndex: -1,
+        },
+        color: "white",
+    },
+    _after: {
+        content: `""`,
+        position: "absolute",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        bg: "gray.600",
+        transform: "scaleX(0)",
+        transformOrigin: "right",
+        transition: "transform 0.5s ease-out",
+        zIndex: -1,
+    },
+};
+
 
 const Navbar = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
 
     return (
         <>
-            <Box
+            <MotionBox
                 as="nav"
                 bg="black"
                 p={2}
-                display={{ base: 'none', md: 'flex' }} // Hide on small screens
+                display={{ base: 'none', md: 'flex' }}
                 justifyContent="space-between"
                 alignItems="center"
                 position="fixed"
@@ -35,57 +73,78 @@ const Navbar = () => {
                 left={0}
                 right={0}
                 zIndex={1000}
+                initial={{ y: -100, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 1.05, ease: 'easeOut' }}
             >
-                <Box w={{ base: '100%', md: '20%' }}>
-                    <Avatar
-                        name="Ajay Kandhare"
-                        src={ProfilePhoto} // Replace with your image URL
-                        boxSize="50px" // Set the size of the avatar
-                        borderRadius="full" // Set to 'full' for circular edges
-                    />
-                </Box>
                 <Box
-                    w={{ base: '100%', md: '80%' }}
-                    display="flex"
-                    flexDirection={{ base: 'column', md: 'row' }}
-                    justifyContent="space-around"
+                    as="nav"
+                    bg="black"
+                    p={2}
+                    display={{ base: 'none', md: 'flex' }} // Hide on small screens
+                    justifyContent="space-between"
                     alignItems="center"
+                    position="fixed"
+                    top={0}
+                    left={0}
+                    right={0}
+                    zIndex={1000}
                 >
-                    <Breadcrumb separator="" spacing="4">
-                        <BreadcrumbItem>
-                            <BreadcrumbLink as={RouterLink} to="/" color="white" fontWeight="bold" _hover={{ bg: 'gray.700', textDecoration: 'none' }} px={3}>
-                                Home
-                            </BreadcrumbLink>
-                        </BreadcrumbItem>
-                        <BreadcrumbItem>
-                            <BreadcrumbLink as={RouterLink} to="/about" color="white" fontWeight="bold" _hover={{ bg: 'gray.700', textDecoration: 'none' }} px={3}>
-                                About
-                            </BreadcrumbLink>
-                        </BreadcrumbItem>
-                        <BreadcrumbItem>
-                            <BreadcrumbLink as={RouterLink} to="/skills" color="white" fontWeight="bold" _hover={{ bg: 'gray.700', textDecoration: 'none' }} px={3}>
-                                Skills
-                            </BreadcrumbLink>
-                        </BreadcrumbItem>
-                        <BreadcrumbItem>
-                            <BreadcrumbLink as={RouterLink} to="/projects" color="white" fontWeight="bold" _hover={{ bg: 'gray.700', textDecoration: 'none' }} px={3}>
-                                Projects
-                            </BreadcrumbLink>
-                        </BreadcrumbItem>
-                        <BreadcrumbItem>
-                            <BreadcrumbLink as={RouterLink} to="/contact" color="white" fontWeight="bold" _hover={{ bg: 'gray.700', textDecoration: 'none' }} px={3}>
-                                Contact
-                            </BreadcrumbLink>
-                        </BreadcrumbItem>
-                        <BreadcrumbItem>
-                            <BreadcrumbLink as={RouterLink} to="/admin" color="white" fontWeight="bold" _hover={{ bg: 'gray.700', textDecoration: 'none' }} px={3}>
-                                Admin
-                            </BreadcrumbLink>
-                        </BreadcrumbItem>
-                    </Breadcrumb>
-                </Box>
+                    <Box w={{ base: '100%', md: '20%' }}>
+                        <Avatar
+                            name="Ajay Kandhare"
+                            // src={ProfilePhoto} // Replace with your image URL
+                            boxSize="50px" // Set the size of the avatar
+                            borderRadius="full" // Set to 'full' for circular edges
+                            color="#fff"
+                            bg="gray.700"
+                            fontWeight={900}
 
-            </Box>
+                        />
+                    </Box>
+                    <Box
+                        w={{ base: '100%', md: '80%' }}
+                        display="flex"
+                        flexDirection={{ base: 'column', md: 'row' }}
+                        justifyContent="space-around"
+                        alignItems="center"
+                    >
+                        <Breadcrumb separator="" spacing="4">
+                            <BreadcrumbItem>
+                                <BreadcrumbLink as={RouterLink} to="/" color="white" fontWeight="bold" {...breadcrumbHoverStyle} px={3}>
+                                    Home
+                                </BreadcrumbLink>
+                            </BreadcrumbItem>
+                            <BreadcrumbItem>
+                                <BreadcrumbLink as={RouterLink} to="/about" color="white" fontWeight="bold" {...breadcrumbHoverStyle} px={3}>
+                                    About
+                                </BreadcrumbLink>
+                            </BreadcrumbItem>
+                            <BreadcrumbItem>
+                                <BreadcrumbLink as={RouterLink} to="/skills" color="white" fontWeight="bold" {...breadcrumbHoverStyle} px={3}>
+                                    Skills
+                                </BreadcrumbLink>
+                            </BreadcrumbItem>
+                            <BreadcrumbItem>
+                                <BreadcrumbLink as={RouterLink} to="/projects" color="white" fontWeight="bold" {...breadcrumbHoverStyle} px={3}>
+                                    Projects
+                                </BreadcrumbLink>
+                            </BreadcrumbItem>
+                            <BreadcrumbItem>
+                                <BreadcrumbLink as={RouterLink} to="/contact" color="white" fontWeight="bold" {...breadcrumbHoverStyle} px={3}>
+                                    Contact
+                                </BreadcrumbLink>
+                            </BreadcrumbItem>
+                            <BreadcrumbItem>
+                                <BreadcrumbLink as={RouterLink} to="/admin" color="white" fontWeight="bold" {...breadcrumbHoverStyle} px={3}>
+                                    Admin
+                                </BreadcrumbLink>
+                            </BreadcrumbItem>
+                        </Breadcrumb>
+                    </Box>
+
+                </Box>
+            </MotionBox>
 
             {/* Hamburger icon for small screens */}
             <Box display={{ base: 'flex', md: 'none' }} justifyContent="flex-end" p={4}>
@@ -105,7 +164,15 @@ const Navbar = () => {
                 <DrawerOverlay />
                 <DrawerContent >
                     <DrawerHeader bg="gray.900" color="white" display="flex" justifyContent="space-between" alignItems="center">
-                        <span>Menu</span>
+                        <Avatar
+                            name="Ajay Kandhare"
+                            // src={ProfilePhoto} // Replace with your image URL
+                            boxSize="50px" // Set the size of the avatar
+                            borderRadius="full" // Set to 'full' for circular edges
+                            color="#fff"
+                            bg="gray.700"
+                            fontWeight={900}
+                        />
                         <CloseButton color="white" onClick={onClose} />
                     </DrawerHeader>
                     <DrawerBody bg="gray.800" color="white" display="flex" flexDirection="column" p={0}>

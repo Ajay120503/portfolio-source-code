@@ -18,9 +18,11 @@ import { GiSkills } from "react-icons/gi";
 import { VscVscode } from "react-icons/vsc";
 import { SiCyberdefenders } from "react-icons/si";
 import { motion } from 'framer-motion';
+import HoverCard from "@darenft/react-3d-hover-card";
+import "@darenft/react-3d-hover-card/dist/style.css";
 
 const foggyLeftToRight = {
-    hidden: { opacity: 0, x: -50 },
+    hidden: { opacity: 0, x: -100 },
     visible: { opacity: 1, x: 0 }
 };
 
@@ -31,7 +33,11 @@ const SkillCard = ({ title, skills }) => {
             borderRadius="0px"
             p={4}
             bg="gray.700"
-            _hover={{ transform: 'scale(1.05)', transition: '0.1s' }}
+            _hover={{
+                transform: 'scale(1.05)',
+                transition: '0.2s',
+                boxShadow: 'md',
+            }}
             maxWidth="300px"
             flexGrow={1}
             boxShadow="dark-lg"
@@ -45,11 +51,15 @@ const SkillCard = ({ title, skills }) => {
                 viewport={{ once: true }}
             >
                 <Heading size="md" mb='20px'>{title}</Heading>
-                <HStack spacing={4} mt={2} wrap="wrap" justifyContent='space-evenly'>
-                    {skills.map((skill) => (
-                        <Icon key={skill} as={getSkillIcon(skill)} boxSize={12} color={getSkillColor(skill)} />
-                    ))}
-                </HStack>
+                <HoverCard scaleFactor={1.5}>
+                    <HStack spacing={4} mt={2} wrap="wrap" justifyContent='space-evenly' >
+                        {skills.map((skill) => (
+                            <HoverCard scaleFactor={1.5} key={skill}>
+                                <Icon as={getSkillIcon(skill)} boxSize={14} color={getSkillColor(skill)} />
+                            </HoverCard>
+                        ))}
+                    </HStack>
+                </HoverCard>
             </motion.div>
         </Box>
     );
