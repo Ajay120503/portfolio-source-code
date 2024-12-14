@@ -54,7 +54,7 @@ const ProjectCard = ({ title, description, techStack, link, source, img }) => {
                     <Text mt={1} fontSize="sm">
                         <Text color="teal.200" mt={3}>
                             <Link href={link} target="_blank" rel="noopener noreferrer" aria-label={`Project link to ${title}`}>
-                                Project Link
+                                Live Link
                             </Link>
                         </Text>
                         <Text color="orange.300" mt={3}>

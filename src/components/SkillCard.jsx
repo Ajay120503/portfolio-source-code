@@ -42,6 +42,7 @@ const SkillCard = ({ title, skills }) => {
             flexGrow={1}
             boxShadow="dark-lg"
             border="1px solid #ffffff29"
+            margin="0 auto"
         >
             <motion.div
                 variants={foggyLeftToRight}
