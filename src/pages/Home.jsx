@@ -1,6 +1,5 @@
 import SkillCard from '../components/SkillCard';
 import ProjectCard from '../components/ProjectCard';
-import Navbar from '../components/Navbar';
 import { Box, Heading, Flex, Divider } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import EducationTimeline from '../components/EducationTimeline';
@@ -97,8 +96,8 @@ function Home() {
             title: 'Code Box',
             description: 'A dynamic web platform designed to centralize resources,store your codes and source code.',
             techStack: 'React, Node.js, Chakra UI, Vite',
-            link: `https://random-chat-alpha.vercel.app`,
-            source: `https://github.com/Ajay120503/random-chat-code-source.git`,
+            link: `https://code-box-alpha.vercel.app`,
+            source: `https://github.com/Ajay120503/Code-Box-Source-Code`,
             img: CODEBOX
         },
         {
@@ -140,9 +139,7 @@ function Home() {
     return (
         <>
             <Box maxW="1250px" bg="gray.800" mx="auto" color="white" overflow="hidden" >
-                <Box h='10vh' mb={5}>
-                    <Navbar />
-                </Box>
+
                 <Box>
                     <Introduction />
                 </Box>

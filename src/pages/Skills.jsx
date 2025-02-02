@@ -1,5 +1,5 @@
 // SkillCard.jsx
-import { Box, Heading, Wrap, WrapItem, Icon, Button } from '@chakra-ui/react';
+import { Box, Heading, Wrap, WrapItem, Icon } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import {
     FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJsSquare,
@@ -13,7 +13,6 @@ import {
 import { GiSkills } from "react-icons/gi";
 import { VscVscode } from "react-icons/vsc";
 import { FaPeopleGroup } from "react-icons/fa6";
-import { useNavigate } from 'react-router-dom';
 
 const foggyLeftToRight = {
     hidden: { opacity: 0, x: -50 },
@@ -29,7 +28,6 @@ const skills = {
 };
 
 const Skills = () => {
-    const navigate = useNavigate();
     return (
         <Box p={4} maxWidth="100%" overflow="hidden">
             <Box textAlign={{ base: "center", lg: "start" }} position="fixed" bg="gray.900" w="100vw" top={0} left={0}>
@@ -79,16 +77,6 @@ const Skills = () => {
                 ))}
             </Box>
             <Box>
-                <Button
-                    onClick={() => navigate(-1)} // Navigate back to the previous page
-                    colorScheme="teal" // Change color scheme as needed
-                    variant="outline" // Change variant as needed
-                    leftIcon={<Icon name="arrow-back" />} // Optionally add an icon
-                    mt={5}
-                    _hover={{ bg: "teal.900" }}
-                >
-                    Back
-                </Button>
             </Box>
         </Box>
     );

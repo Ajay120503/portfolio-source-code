@@ -1,11 +1,9 @@
-import { Box, Button, FormControl, FormLabel, Input, Textarea, VStack, Heading, useToast, Text, Icon } from '@chakra-ui/react';
+import { Box, Button, FormControl, FormLabel, Input, Textarea, VStack, Heading, useToast, Text } from '@chakra-ui/react';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 function Contact() {
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
     const toast = useToast();
-    const navigate = useNavigate();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -118,16 +116,6 @@ function Contact() {
                     </Button>
                 </VStack>
             </form>
-            <Button
-                onClick={() => navigate(-1)} // Navigate back to the previous page
-                colorScheme="teal" // Change color scheme as needed
-                variant="outline" // Change variant as needed
-                leftIcon={<Icon name="arrow-back" />} // Optionally add an icon
-                mt={5}
-                _hover={{ bg: "teal.900" }}
-            >
-                Back
-            </Button>
         </Box>
     );
 }

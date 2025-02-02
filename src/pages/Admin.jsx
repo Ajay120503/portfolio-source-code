@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import { Box, Button, Input, Heading, FormLabel, VStack, useToast, Card, IconButton, InputGroup, InputRightElement, Icon } from '@chakra-ui/react';
+import { Box, Button, Input, Heading, FormLabel, VStack, useToast, Card, IconButton, InputGroup, InputRightElement } from '@chakra-ui/react';
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
-import { useNavigate } from 'react-router-dom';
 
 const Admin = () => {
     const [username, setUsername] = useState('');
@@ -9,7 +8,6 @@ const Admin = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
     const toast = useToast();
-    const navigate = useNavigate();
 
     // Ideally, move these credentials to environment variables or a secure vault
     const ADMIN_USERNAME = 'ajayKandhare';
@@ -52,18 +50,7 @@ const Admin = () => {
     };
 
     return (
-        <Box p={{ base: 4, md: 8 }} bg="gray.800" color="white" minH="100vh" display="flex" alignItems="center" justifyContent="center">
-            <Button
-                onClick={() => navigate(-1)} // Navigate back to the previous page
-                colorScheme="teal" // Change color scheme as needed
-                variant="outline" // Change variant as needed
-                leftIcon={<Icon name="arrow-back" />} // Optionally add an icon
-                position='absolute'
-                top={5}
-                left={5}
-                zIndex={1000}
-                _hover={{ bg: "teal.900" }}
-            >Back</Button>
+        <Box p={{ base: 4, md: 8 }} h="85vh" my="auto" bg="gray.800" color="white" display="flex" alignItems="center" justifyContent="center">
             {!isLoggedIn ? (
                 <VStack spacing={4} width={{ base: '90%', sm: '75%', md: '50%', lg: '35%' }}>
                     <Card color="#fff" p={5} width="100%" textAlign="center" bg="gray.700" boxShadow="dark-lg" borderRadius="0px">

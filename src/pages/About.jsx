@@ -1,9 +1,7 @@
-import { Box, Avatar, Heading, Text, Link, Button, Icon } from '@chakra-ui/react';
+import { Box, Avatar, Heading, Text, Link } from '@chakra-ui/react';
 import PHOTO1 from '../../public/PHOTO1.png';
-import { useNavigate } from 'react-router-dom';
 
 function About() {
-    const navigate = useNavigate();
     return (
         <Box
             maxW={{ base: "90%", md: "600px" }} // Responsive max width
@@ -61,16 +59,6 @@ function About() {
                 Skilled in <span style={{ fontWeight: 'bold' }}>JavaScript</span>, <span style={{ fontWeight: 'bold' }}>TypeScript</span>, <span style={{ fontWeight: 'bold' }}>Node.js</span>, and frontend frameworks,
                 with a focus on <span style={{ fontWeight: 'bold' }}>problem-solving</span> and <span style={{ fontWeight: 'bold' }}>adaptability</span>.
             </Text>
-            <Button
-                onClick={() => navigate(-1)} // Navigate back to the previous page
-                colorScheme="teal" // Change color scheme as needed
-                variant="outline" // Change variant as needed
-                leftIcon={<Icon name="arrow-back" />} // Optionally add an icon
-                mt={5}
-                _hover={{ bg: "teal.900" }}
-            >
-                Back
-            </Button>
         </Box>
     );
 }

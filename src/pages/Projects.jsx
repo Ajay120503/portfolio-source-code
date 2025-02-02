@@ -1,10 +1,9 @@
-import { Box, Heading, Text, Link, Image, Button, Icon } from '@chakra-ui/react';
+import { Box, Heading, Text, Link, Image } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import MMCC from '../../public/MMCC.png';
 import WEBHUB from '../../public/WEBHUB.png';
 import CODERHUB from '../../public/CODERHUB.png';
 import CODEBOX from '../../public/CODEBOX.png'
-import { useNavigate } from 'react-router-dom';
 
 const projects = [
     {
@@ -54,8 +53,6 @@ const Projects = () => {
         hidden: { opacity: 0, x: 100 },
         visible: { opacity: 1, x: 0 },
     };
-
-    const navigate = useNavigate();
 
     return (
         <Box maxWidth="100%" overflow="hidden">
@@ -126,18 +123,6 @@ const Projects = () => {
                         </motion.div>
                     </Box>
                 ))}
-            </Box>
-            <Box>
-                <Button
-                    onClick={() => navigate(-1)} // Navigate back to the previous page
-                    colorScheme="teal" // Change color scheme as needed
-                    variant="outline" // Change variant as needed
-                    leftIcon={<Icon name="arrow-back" />} // Optionally add an icon
-                    m="5px 0 10px 5px"
-                    _hover={{ bg: "teal.900" }}
-                >
-                    Back
-                </Button>
             </Box>
         </Box>
     );
