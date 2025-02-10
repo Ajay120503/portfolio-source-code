@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Box, Button, Input, Heading, FormLabel, VStack, useToast, Card, IconButton, InputGroup, InputRightElement } from '@chakra-ui/react';
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
+import BackButton from '../components/BackButton';
 
 const Admin = () => {
     const [username, setUsername] = useState('');
@@ -92,6 +93,9 @@ const Admin = () => {
                         </Box>
                         <Button mt={5} onClick={handleLogin} colorScheme="teal" width="100%">Login</Button>
                     </Card>
+                    <Box>
+                        <BackButton />
+                    </Box>
                 </VStack>
             ) : (
                 <Box textAlign="center">

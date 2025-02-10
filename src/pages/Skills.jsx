@@ -13,6 +13,7 @@ import {
 import { GiSkills } from "react-icons/gi";
 import { VscVscode } from "react-icons/vsc";
 import { FaPeopleGroup } from "react-icons/fa6";
+import BackButton from '../components/BackButton';
 
 const foggyLeftToRight = {
     hidden: { opacity: 0, x: -50 },
@@ -29,7 +30,7 @@ const skills = {
 
 const Skills = () => {
     return (
-        <Box p={4} maxWidth="100%" overflow="hidden">
+        <Box p={2} maxWidth="100%" overflow="hidden">
             <Box textAlign={{ base: "center", lg: "start" }} position="fixed" bg="gray.900" w="100vw" top={0} left={0}>
                 <Heading id='skills' as="h2" size="lg" m="10px 0 10px 10px">
                     Skills
@@ -41,7 +42,7 @@ const Skills = () => {
                 justifyContent={{ base: "center", lg: "space-between" }}
                 alignItems={{ base: "center", lg: "start" }}
                 px={{ base: 2, md: 6 }}
-                mt={10}
+                mt={20}
             >
                 {Object.entries(skills).map(([category, skillList]) => (
                     <Box
@@ -77,6 +78,7 @@ const Skills = () => {
                 ))}
             </Box>
             <Box>
+                <BackButton />
             </Box>
         </Box>
     );

@@ -1,5 +1,6 @@
 import { Box, Button, FormControl, FormLabel, Input, Textarea, VStack, Heading, useToast, Text } from '@chakra-ui/react';
 import { useState } from 'react';
+import BackButton from '../components/BackButton';
 
 function Contact() {
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -116,6 +117,9 @@ function Contact() {
                     </Button>
                 </VStack>
             </form>
+            <Box>
+                <BackButton />
+            </Box>
         </Box>
     );
 }

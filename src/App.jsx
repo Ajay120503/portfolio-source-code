@@ -2,7 +2,6 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 import { Box, Spinner } from '@chakra-ui/react';
-import Navbar from './components/Navbar.jsx';
 
 const Home = lazy(() => import('./pages/Home.jsx'));
 const About = lazy(() => import('./pages/About.jsx'));
@@ -26,9 +25,6 @@ function App() {
               size='xl'
             />
           </Box>}>
-        <Box h='10vh' mb={5}>
-          <Navbar />
-        </Box>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

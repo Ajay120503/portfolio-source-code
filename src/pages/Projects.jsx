@@ -4,6 +4,8 @@ import MMCC from '../../public/MMCC.png';
 import WEBHUB from '../../public/WEBHUB.png';
 import CODERHUB from '../../public/CODERHUB.png';
 import CODEBOX from '../../public/CODEBOX.png'
+import RandChat from '../../public/RandChat.png'
+import BackButton from '../components/BackButton';
 
 const projects = [
     {
@@ -45,7 +47,15 @@ const projects = [
         link: `https://code-box-alpha.vercel.app`,
         source: `https://github.com/Ajay120503/Code-Box-Source-Code.git`,
         img: CODEBOX
-    }
+    },
+    {
+        title: 'Random Chat',
+        description: 'Random Chat is an interactive web application designed to faster real-time communication and collaboration.',
+        techStack: 'React, Node.js, Chakra UI, Vite',
+        link: `https://random-chat-alpha.vercel.app`,
+        source: `https://github.com/Ajay120503/random-chat-code-source.git`,
+        img: RandChat
+    },
 ];
 
 const Projects = () => {
@@ -61,7 +71,7 @@ const Projects = () => {
                     Projects
                 </Heading>
             </Box>
-            <Box display="flex" flexWrap="wrap" justifyContent="center" mt={10}>
+            <Box display="flex" flexWrap="wrap" justifyContent="center" mt={20}>
                 {projects.map((project) => (
                     <Box
                         key={project.title}
@@ -123,6 +133,9 @@ const Projects = () => {
                         </motion.div>
                     </Box>
                 ))}
+            </Box>
+            <Box>
+                <BackButton />
             </Box>
         </Box>
     );

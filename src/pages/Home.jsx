@@ -15,6 +15,7 @@ import Experience from './Experience';
 import ScrollButton from '../components/ScrollButton';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Navbar from '../components/Navbar';
 
 AOS.init({
     // Global settings:
@@ -139,6 +140,9 @@ function Home() {
     return (
         <>
             <Box maxW="1250px" bg="gray.800" mx="auto" color="white" overflow="hidden" >
+                <Box h='10vh' mb={5}>
+                    <Navbar />
+                </Box>
 
                 <Box>
                     <Introduction />

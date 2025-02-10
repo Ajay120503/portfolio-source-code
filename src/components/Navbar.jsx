@@ -16,7 +16,6 @@ import {
 } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
 import { HamburgerIcon } from '@chakra-ui/icons';
-import ProfilePhoto from '../../public/profilePhoto.jpg';
 import { motion } from 'framer-motion';
 
 const MotionBox = motion(Box);
