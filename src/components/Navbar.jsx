@@ -146,7 +146,15 @@ const Navbar = () => {
             </MotionBox>
 
             {/* Hamburger icon for small screens */}
-            <Box display={{ base: 'flex', md: 'none' }} justifyContent="flex-end" p={4}>
+            <Box
+                position="fixed"
+                top="0px"
+                right="0px"
+                display={{ base: 'flex', md: 'none' }}
+                justifyContent="flex-end"
+                p={4}
+                zIndex={100}
+            >
                 <IconButton
                     icon={<HamburgerIcon color="gray" />}
                     variant="outline"

@@ -140,7 +140,7 @@ function Home() {
     return (
         <>
             <Box maxW="1250px" bg="gray.800" mx="auto" color="white" overflow="hidden" >
-                <Box h='10vh' mb={5}>
+                <Box h={{ base: '8px', md: '10vh' }}>
                     <Navbar />
                 </Box>
 

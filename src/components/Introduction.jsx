@@ -1,5 +1,5 @@
 import { Box, Grid, Text, Link, useBreakpointValue, Heading, Button } from '@chakra-ui/react';
-import PHOTO1 from '../../public/PHOTO1.png';
+import PHOTO1 from '../../public/resume_photo.jpg';
 import { motion } from 'framer-motion';
 import CV from '../../public/CV.pdf'
 import { TypeAnimation } from 'react-type-animation';
